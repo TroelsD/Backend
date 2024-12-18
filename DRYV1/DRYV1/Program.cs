@@ -73,7 +73,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-app.UseCors(); // Ensure this is placed before UseAuthentication and UseAuthorization
+app.UseCors();
 app.UseAuthentication();
 app.UseAuthorization();
 
