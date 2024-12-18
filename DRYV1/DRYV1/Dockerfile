@@ -7,7 +7,7 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["path/to/DRYV1/DRYV1.csproj", "DRYV1/"]
+COPY ["DRYV1/DRYV1.csproj", "DRYV1/"]
 RUN dotnet restore "DRYV1/DRYV1.csproj"
 COPY . .
 WORKDIR "/src/DRYV1"
