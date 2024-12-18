@@ -39,5 +39,3 @@ bld/
 .DS_Store
 
 # Ignore appsettings.json
-appsettings.json
-appsettings.Development.json
