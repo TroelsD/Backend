@@ -79,7 +79,7 @@ public class AuthController : ControllerBase
 
         await _context.SaveChangesAsync();
 
-        return Redirect("http://localhost:5173/login");
+        return Redirect("https://frontend-5-stot.onrender.com//login");
     }
 
     [HttpPost("login")]
@@ -112,7 +112,7 @@ public class AuthController : ControllerBase
         }
 
         var token = _jwtService.GenerateToken(user);
-        var resetLink = $"http://localhost:5173/reset-password/{token}";
+        var resetLink = $"https://frontend-5-stot.onrender.com/reset-password/{token}";
         await _emailService.SendEmailAsync(email, "Reset your password", $"Please reset your password by clicking <a href='{resetLink}'>here</a>.");
 
         return Ok(new { Message = "Password reset link has been sent to your email." });
