@@ -79,7 +79,7 @@ public class AuthController : ControllerBase
 
         await _context.SaveChangesAsync();
 
-        return Redirect("https://frontend-5-stot.onrender.com//login");
+        return Redirect("https://frontend-5-stot.onrender.com/login");
     }
 
     [HttpPost("login")]
