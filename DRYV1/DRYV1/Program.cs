@@ -81,17 +81,7 @@ app.UseAuthorization();
 // Enable rate limiting
 app.UseIpRateLimiting();
 
-// Fallback to index.html for non-API routes
-app.Use(async (context, next) =>
-{
-    await next();
-
-    if (context.Response.StatusCode == 404 && !context.Request.Path.Value.StartsWith("/api"))
-    {
-        context.Request.Path = "/index.html";
-        await next();
-    }
-});
-
+// Handle API routes
 app.MapControllers();
+
 app.Run();
